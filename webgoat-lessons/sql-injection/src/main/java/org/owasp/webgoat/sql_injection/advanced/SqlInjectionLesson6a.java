@@ -57,6 +57,7 @@ public class SqlInjectionLesson6a extends AssignmentEndpoint {
         String query = "";
         try (Connection connection = dataSource.getConnection()) {
             boolean usedUnion = true;
+            SanitizedaccountName = Sanitizer_sqlInjection(accountName);
             query = "SELECT * FROM user_data WHERE last_name = '" + accountName + "'";
             //Check if Union is used
             if (!accountName.matches("(?i)(^[^-/*;)]*)(\\s*)UNION(.*$)")) {
