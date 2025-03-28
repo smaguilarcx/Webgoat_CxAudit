@@ -22,8 +22,8 @@ jobs:
         uses: Checkmarx/ast-github-action@2.0.23
         with:
           project_name:  ${{ github.repository }}
-          cx_tenant: ${{ CX_TENANT }}
-          base_uri: ${{ BASE_URI }} 
+          cx_tenant: ${{ vars.CX_TENANT }}
+          base_uri: ${{ vars.BASE_URI }} 
           cx_client_id: ${{ secrets.CX_CLIENT_ID }}
           cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }}
   
